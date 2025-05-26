@@ -12,10 +12,6 @@ async function getAllCompanies() {
         }
 
         const companies = await response.json();
-        
-        // Debug: Log the response for verification
-        console.log('API Response:', companies);
-        
         return companies;
     } catch (error) {
         console.error('Error fetching companies:', error.message);
@@ -104,10 +100,7 @@ async function init() {
     const errorMessage = document.getElementById('errorMessage');
     let isExpanded = false;
     let selectedCompany = null;
-
-    // Card click to toggle company list
     card.addEventListener('click', (e) => {
-        // Ignore clicks on company items, department items, or back buttons
         if (e.target.classList.contains('company-item') || 
             e.target.classList.contains('department-item') || 
             e.target.id === 'backToCompanies' || 
@@ -129,7 +122,7 @@ async function init() {
         }
     });
 
-    // Delegate click events for company items
+    
     content.addEventListener('click', (e) => {
         const companyItem = e.target.closest('.company-item');
         if (companyItem) {
@@ -143,7 +136,6 @@ async function init() {
         }
     });
 
-    // Delegate click events for department items
     content.addEventListener('click', (e) => {
         const departmentItem = e.target.closest('.department-item');
         if (departmentItem && selectedCompany) {
@@ -157,7 +149,6 @@ async function init() {
         }
     });
 
-    // Delegate click events for back buttons
     content.addEventListener('click', (e) => {
         if (e.target.id === 'backToCompanies' || e.target.closest('#backToCompanies')) {
             renderCompanyList(companies);
@@ -172,5 +163,4 @@ async function init() {
     });
 }
 
-// Call on page load
 init();
