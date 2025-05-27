@@ -5,49 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Data Card</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="container mx-auto p-6">
+<body class="bg-gradient-to-br from-gray-100 to-blue-100 min-h-screen flex items-center justify-center p-6">
+    <div class="container mx-auto">
         <header class="text-center mb-8">
             <h1 class="text-4xl font-extrabold text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 animate-pulse">Company Explorer</h1>
-            <p class="text-gray-600 mt-2">Discover company details with ease</p>
+            <p class="text-gray-600 mt-2">Click the card to view companies and their details</p>
         </header>
-        <div class="mb-8 relative">
-            <label for="companySelect" class="block text-sm font-semibold text-gray-800 mb-3 flex items-center">
-                <!-- <i class="fas fa-building mr-2 text-blue-600"></i> Select a Company
-            </label> -->
-            <select id="companySelect" class="block w-full max-w-lg mx-auto p-3 pl-10 bg-white border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition duration-300 ease-in-out hover:shadow-md">
-               
-            </select>
-            <i class="fas fa-chevron-down absolute right-4 top-12 text-gray-500 pointer-events-none"></i>
-        </div>
-        <div id="companyCard" class="max-w-lg mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hidden">
+        <div id="companyCard" class="max-w-lg mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 cursor-pointer">
             <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-5 flex items-center">
                 <i class="fas fa-briefcase mr-3 text-xl"></i>
-                <h2 id="companyName" class="text-2xl font-bold">Company Name</h2>
+                <h2 id="companyName" class="text-2xl font-bold">Click to View Companies</h2>
             </div>
-            <div class="p-8 bg-gray-50">
-                <p class="text-gray-800 mb-4 flex items-center">
-                    <i class="fas fa-id-badge mr-2 text-blue-500"></i>
-                    <span class="font-semibold">ID:</span> <span id="companyId" class="ml-2">N/A</span>
-                </p>
-                <p class="text-gray-800 mb-4 flex items-center">
-                    <i class="fas fa-industry mr-2 text-blue-500"></i>
-                    <span class="font-semibold">Industry:</span> <span id="companyIndustry" class="ml-2">N/A</span>
-                </p>
-                <p class="text-gray-800 flex items-center">
-                    <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
-                    <span class="font-semibold">Location:</span> <span id="companyLocation" class="ml-2">N/A</span>
-                </p>
+            <div id="companyContent" class="p-8 bg-gray-50 hidden">
+                <!-- Company list or details will be inserted here -->
             </div>
         </div>
-        <div id="errorMessage" class="max-w-lg mx-auto text-center text-red-600 bg-red-50 p-4 rounded-xl shadow-md hidden flex items-center justify-center">
+        <div id="errorMessage" class="max-w-lg mx-auto text-center text-red-600 bg-red-50 p-4 rounded-xl shadow-md hidden flex items-center justify-center mt-6">
             <i class="fas fa-exclamation-circle mr-2"></i> Failed to load data
         </div>
     </div>
-
-
-    <script src="/index.js"> </script>
+    <script src="/index.js"></script>
 </body>
 </html>
