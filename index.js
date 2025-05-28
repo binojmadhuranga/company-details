@@ -93,6 +93,7 @@ function renderDepartmentDetails(dept, companyName) {
     `;
 }
 
+
 async function init() {
     const companies = await getAllCompanies();
     const card = document.getElementById('companyCard');
